@@ -4,6 +4,10 @@ import "./scss/style.scss";
 
 //_____________________________________________________________________
 
+const main = document.querySelector("main");
+
+const container = document.querySelector(".container_characters");
+
 //______________________________________________________________________
 
 const URL = `https://character-database.becode.xyz/characters`;
@@ -11,12 +15,6 @@ const URL = `https://character-database.becode.xyz/characters`;
 axios
   .get(URL)
   .then((response) => {
-    const main = document.querySelector("main");
-
-    const container = document.createElement("section");
-    container.setAttribute("class", "container_characters");
-    main.appendChild(container);
-
     let displayCharacters = (e) => {
       const containerCharacter = document.createElement("div");
       containerCharacter.setAttribute("class", "container_character");
@@ -39,7 +37,6 @@ axios
     displayCharacters(1);
     displayCharacters(2);
     displayCharacters(3);
-    displayCharacters(4);
   })
   .catch((error) => {
     console.log(error);
