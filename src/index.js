@@ -10,13 +10,13 @@ const container = document.querySelector(".container_characters");
 
 //______________________________________________________________________
 
-const sendGetRequest = async () => {
+const displayCharacters = async () => {
   try {
     const response = await axios.get(
       `https://character-database.becode.xyz/characters`
     );
 
-    let displayCharacters = (e) => {
+    let displayCharacter = (e) => {
       const containerCharacter = document.createElement("div");
       containerCharacter.setAttribute("class", "container_character");
       container.appendChild(containerCharacter);
@@ -34,13 +34,13 @@ const sendGetRequest = async () => {
       containerCharacter.appendChild(shortDescriprt);
     };
 
-    displayCharacters(0);
-    displayCharacters(1);
-    displayCharacters(2);
-    displayCharacters(3);
+    displayCharacter(0);
+    displayCharacter(1);
+    displayCharacter(2);
+    displayCharacter(3);
   } catch (err) {
     console.error(err);
   }
 };
 
-sendGetRequest();
+displayCharacters();
