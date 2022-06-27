@@ -10,11 +10,12 @@ const container = document.querySelector(".container_characters");
 
 //______________________________________________________________________
 
-const URL = `https://character-database.becode.xyz/characters`;
+const sendGetRequest = async () => {
+  try {
+    const response = await axios.get(
+      `https://character-database.becode.xyz/characters`
+    );
 
-axios
-  .get(URL)
-  .then((response) => {
     let displayCharacters = (e) => {
       const containerCharacter = document.createElement("div");
       containerCharacter.setAttribute("class", "container_character");
@@ -37,7 +38,9 @@ axios
     displayCharacters(1);
     displayCharacters(2);
     displayCharacters(3);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+sendGetRequest();
