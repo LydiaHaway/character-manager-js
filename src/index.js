@@ -32,12 +32,24 @@ const displayCharacters = async () => {
       const shortDescriprt = document.createElement("p");
       shortDescriprt.textContent = response.data[e].shortDescription;
       containerCharacter.appendChild(shortDescriprt);
+
+      const linkProfile = document.createElement("a");
+      linkProfile.textContent = "profile";
+      containerCharacter.appendChild(linkProfile);
+      linkProfile.href = "exemple.com";
     };
+
+    for (let i = 0; i > 99; i++) {
+      displayCharacter(i);
+    }
 
     displayCharacter(0);
     displayCharacter(1);
     displayCharacter(2);
     displayCharacter(3);
+    displayCharacter(4);
+    displayCharacter(5);
+    displayCharacter(6);
   } catch (err) {
     console.error(err);
   }
