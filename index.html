@@ -28,9 +28,28 @@
     </header>
     <main>
       <section class="container_characters"></section>
-      <a href="./addCharacter.html">
-        <button class="add_character_button">Ajouter un personnage</button>
-      </a>
+
+      <button class="add_character_button">Ajouter un personnage</button>
+
+      <section class="add_character">
+        <label>Name </label> <br />
+        <br />
+        <input id="nameCharacter" type="text" /> <br />
+        <br />
+        <label>Short description</label> <br />
+        <br />
+        <textarea id="shortDescription" type="text"></textarea> <br />
+        <br />
+        <label>Description</label> <br />
+        <br />
+        <textarea id="description"></textarea> <br />
+        <br />
+        <input type="file" id="file-selector" accept=".jpg, .jpeg, .png" />
+        <br />
+        <br />
+        <button class="submit">Submit</button>
+      </section>
+
       <button class="return">back</button>
     </main>
     <script src="./dist/main.js"></script>

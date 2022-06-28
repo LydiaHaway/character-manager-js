@@ -37,11 +37,10 @@ const displayCharacters = async () => {
       shortDescriprt.textContent = response.data[e].shortDescription;
       containerCharacter.appendChild(shortDescriprt);
 
-      const linkProfile = document.createElement("a");
+      const linkProfile = document.createElement("button");
       linkProfile.setAttribute("class", "link_profile");
       linkProfile.textContent = "profile";
       containerCharacter.appendChild(linkProfile);
-      linkProfile.href = "./profile.html";
     };
 
     displayCharacter(0);
@@ -87,11 +86,10 @@ const displayCharactersSearch = async () => {
     shortDescriprt.textContent = response.data[0].shortDescription;
     containerCharacterSearch.appendChild(shortDescriprt);
 
-    const linkProfile = document.createElement("a");
+    const linkProfile = document.createElement("button");
     linkProfile.textContent = "profile";
     linkProfile.setAttribute("class", "link_profile");
     containerCharacterSearch.appendChild(linkProfile);
-    linkProfile.href = "exemple.com";
   } catch (err) {
     console.error(err);
   }
@@ -100,22 +98,50 @@ const displayCharactersSearch = async () => {
 //____________________________________________________________________________
 
 const containerCharacter = document.querySelector(".container_character");
-const ButtonReturn = document.querySelector(".return");
+const containerSearch = document.querySelector(".container_Search");
+
+const buttonReturn = document.querySelector(".return");
+const buttonAdd = document.querySelector(".add_character_button");
+const buttonSubmit = document.querySelector(".submit");
+
+const form = document.querySelector(".add_character");
+
+const inputName = document.querySelector("#nameCharacter");
+const inputSD = document.querySelector("#shortDescription");
+const inputDescr = document.querySelector("#description");
+
+//___________________________________________________________________________
 
 buttonSearch.addEventListener("click", () => {
   container.remove(containerCharacter);
+  form.style.display = "none";
   displayCharactersSearch();
+  buttonAdd.style.display = "none";
 });
 
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     container.remove(containerCharacter);
+    form.style.display = "none";
     displayCharactersSearch();
+    buttonAdd.style.display = "none";
   }
 });
 
-ButtonReturn.addEventListener("click", () => {
+buttonReturn.addEventListener("click", () => {
   location.reload();
 });
 
-//___________________________________________________________________________
+buttonAdd.addEventListener("click", () => {
+  container.remove(containerCharacter);
+  form.style.display = "block";
+  buttonAdd.style.display = "none";
+});
+
+buttonSubmit.addEventListener("click", () => {
+  console.log(inputName.value);
+  console.log(inputSD.value);
+  console.log(inputDescr.value);
+});
+
+//______________________________________________________________________________
