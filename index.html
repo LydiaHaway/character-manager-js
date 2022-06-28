@@ -15,7 +15,11 @@
       <nav>
         <h1>Character manager</h1>
         <div class="search_field">
-          <input type="text" placeholder="cherche un personnage..." />
+          <input
+            type="text"
+            id="input_search"
+            placeholder="cherche un personnage..."
+          />
           <button class="search">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -24,7 +28,10 @@
     </header>
     <main>
       <section class="container_characters"></section>
-      <button class="add_character">Ajouter un personnage</button>
+      <a href="./addCharacter.html">
+        <button class="add_character_button">Ajouter un personnage</button>
+      </a>
+      <button class="return">back</button>
     </main>
     <script src="./dist/main.js"></script>
   </body>

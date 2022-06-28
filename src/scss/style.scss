@@ -54,6 +54,41 @@ body {
     }
   }
   main {
+    color: white;
+    .container_Search {
+      text-align: center;
+      background-color: rgba(31, 28, 28, 0.815);
+      width: 200px;
+      height: 200px;
+      padding-right: 25px;
+      padding-left: 25px;
+      padding-top: 40px;
+      padding-bottom: 120px;
+      border: 5px double rgba(88, 3, 3, 0.856);
+      border-radius: 15px;
+      margin: auto;
+      img {
+        border-radius: 50%;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        padding: 8px;
+        background-color: rgba(63, 18, 18, 0.616);
+        border: 3px double rgba(88, 3, 3, 0.616);
+        border-radius: 15px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(112, 39, 39, 0.616);
+        }
+      }
+    }
     text-align: center;
     .container_characters {
       display: flex;
@@ -61,17 +96,19 @@ body {
       gap: 60px;
       justify-content: center;
       align-items: center;
+      width: 90%;
       margin: auto;
 
       .container_character {
         text-align: center;
-        background-color: rgba(88, 3, 3, 0.329);
+        background-color: rgba(31, 28, 28, 0.815);
         width: 200px;
+        height: 200px;
         padding-right: 25px;
         padding-left: 25px;
         padding-top: 40px;
         padding-bottom: 120px;
-        border: 5px double rgba(88, 3, 3, 0.329);
+        border: 5px double rgba(88, 3, 3, 0.856);
         border-radius: 15px;
         img {
           border-radius: 50%;
@@ -96,12 +133,23 @@ body {
         }
       }
     }
+
+    .add_character {
+      background-color: rgba(31, 28, 28, 0.815);
+      border: 5px double rgba(88, 3, 3, 0.856);
+      border-radius: 15px;
+      width: 600px;
+      padding: 30px;
+      margin: auto;
+    }
     button {
       margin-top: 50px;
+      margin-bottom: 50px;
       padding: 5px;
       background-color: rgba(88, 3, 3, 0.616);
       border: 3px double rgba(88, 3, 3, 0.616);
       cursor: pointer;
+      color: white;
 
       &:hover {
         background-color: rgba(112, 39, 39, 0.616);
