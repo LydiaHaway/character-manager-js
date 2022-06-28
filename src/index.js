@@ -179,3 +179,5 @@ buttonSubmit.addEventListener("click", () => {
 });
 
 //______________________________________________________________________________
+
+const ButtonProfiles = document.querySelectorAll(".link_profile");
