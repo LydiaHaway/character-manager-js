@@ -36,10 +36,16 @@ body {
 
       h1 {
         font-size: 50px;
+        color: white;
       }
 
       input {
-        height: 20px;
+        height: 25px;
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }
@@ -48,9 +54,10 @@ body {
     .container_characters {
       display: flex;
       flex-flow: row wrap;
-      gap: 20px;
+      gap: 60px;
       justify-content: center;
       align-items: center;
+      margin: auto;
 
       .container_character {
         text-align: center;
