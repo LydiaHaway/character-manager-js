@@ -114,6 +114,28 @@ let displayCharacter = () => {
                 const buttonSubmitUpdate =
                   document.querySelector(".submit_Update");
 
+                const file = document.querySelector("#file-selector_update");
+
+                let base64String = "";
+                base64String = response.data[0].image;
+                function Uploaded() {
+                  var file = document.querySelector("#file-selector_update")[
+                    "files"
+                  ][0];
+                  var reader = new FileReader();
+                  reader.onload = function () {
+                    base64String = reader.result
+                      .replace("data:", "")
+                      .replace(/^.+,/, "");
+                    imageBase64Stringsep = base64String;
+                  };
+                  reader.readAsDataURL(file);
+                }
+
+                file.addEventListener("change", () => {
+                  Uploaded();
+                });
+
                 buttonSubmitUpdate.addEventListener("click", () => {
                   axios.put(
                     `https://character-database.becode.xyz/characters/${getID}`,
@@ -121,7 +143,7 @@ let displayCharacter = () => {
                       name: inputName.value,
                       shortDescription: inputSD.value,
                       description: inputDescr.value,
-                      image: response.data[0].image,
+                      image: base64String,
                     }
                   );
 
@@ -253,6 +275,28 @@ let displayCharactersSearch = () => {
                 const buttonSubmitUpdate =
                   document.querySelector(".submit_Update");
 
+                const file = document.querySelector("#file-selector_update");
+
+                let base64String = "";
+                base64String = response.data[0].image;
+                function Uploaded() {
+                  var file = document.querySelector("#file-selector_update")[
+                    "files"
+                  ][0];
+                  var reader = new FileReader();
+                  reader.onload = function () {
+                    base64String = reader.result
+                      .replace("data:", "")
+                      .replace(/^.+,/, "");
+                    imageBase64Stringsep = base64String;
+                  };
+                  reader.readAsDataURL(file);
+                }
+
+                file.addEventListener("change", () => {
+                  Uploaded();
+                });
+
                 buttonSubmitUpdate.addEventListener("click", () => {
                   axios.put(
                     `https://character-database.becode.xyz/characters/${getID}`,
@@ -260,10 +304,11 @@ let displayCharactersSearch = () => {
                       name: inputName.value,
                       shortDescription: inputSD.value,
                       description: inputDescr.value,
-                      image: response.data[0].image,
+                      image: base64String,
                     }
                   );
-                  alert("You have update the profile");
+
+                  alert("You've update the profile!");
                 });
 
                 buttonDelete.addEventListener("click", () => {
