@@ -12,7 +12,7 @@ let inputSearch = document.querySelector("#input_search");
 
 const buttonSearch = document.querySelector(".search");
 
-//____________________________________________________________________________
+//______________________________________________________________________________________________________________________________________________
 
 let displayCharacter = () => {
   axios
@@ -89,6 +89,29 @@ let displayCharacter = () => {
                 containerFullProfile.appendChild(buttonDelete);
 
                 const getID = response.data[0].id;
+                const formUpdate = document.querySelector(".update_character");
+
+                const inputName = document.querySelector(
+                  "#nameCharacter_update"
+                );
+                const inputSD = document.querySelector(
+                  "#shortDescription_update"
+                );
+                const inputDescr = document.querySelector(
+                  "#description_update"
+                );
+
+                buttonUpdate.addEventListener("click", () => {
+                  inputName.value = response.data[0].name;
+                  inputSD.value = response.data[0].shortDescription;
+                  inputDescr.value = response.data[0].description;
+
+                  containerFullProfile.style.display = "none";
+                  formUpdate.style.display = "block";
+                  console.log(getID);
+                });
+
+                formUpdate.addEventListener("click", () => {});
 
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
@@ -110,7 +133,7 @@ let displayCharacter = () => {
 
 displayCharacter();
 
-//_____________________________________________________________________________
+//_____________________________________________________________________________________________________________________________________________________
 
 let displayCharactersSearch = () => {
   axios
@@ -152,7 +175,7 @@ let displayCharactersSearch = () => {
 
           buttonReturn.style.visibility = "visible";
 
-          //___________________________________
+          //______________________________________________________________________________
 
           let displayfullprofile = () => {
             axios
@@ -188,6 +211,27 @@ let displayCharactersSearch = () => {
                 containerFullProfile.appendChild(buttonDelete);
 
                 const getID = response.data[0].id;
+                const formUpdate = document.querySelector(".update_character");
+
+                const inputName = document.querySelector(
+                  "#nameCharacter_update"
+                );
+                const inputSD = document.querySelector(
+                  "#shortDescription_update"
+                );
+                const inputDescr = document.querySelector(
+                  "#description_update"
+                );
+
+                inputName.value = response.data[0].name;
+                inputSD.value = response.data[0].shortDescription;
+                inputDescr.value = response.data[0].description;
+
+                buttonUpdate.addEventListener("click", () => {
+                  containerFullProfile.style.display = "none";
+                  formUpdate.style.display = "block";
+                  console.log(getID);
+                });
 
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
@@ -202,10 +246,14 @@ let displayCharactersSearch = () => {
           };
 
           displayfullprofile();
+
+          //_________________________________________________________________
         });
       });
     });
 };
+
+//____________________________________________________________________________
 
 //____________________________________________________________________________
 

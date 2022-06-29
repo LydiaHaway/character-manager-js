@@ -89,6 +89,10 @@ body {
         margin-bottom: 20px;
       }
 
+      p {
+        margin-bottom: 20px;
+      }
+
       button {
         color: white;
         padding: 8px;
@@ -116,7 +120,7 @@ body {
         text-align: center;
         background-color: rgba(31, 28, 28, 0.815);
         width: 200px;
-        height: 200px;
+        height: 250px;
         padding-right: 25px;
         padding-left: 25px;
         padding-top: 40px;
@@ -131,6 +135,10 @@ body {
 
         h2 {
           margin-bottom: 20px;
+        }
+
+        p {
+          margin-bottom: 50px;
         }
 
         button {
@@ -149,6 +157,21 @@ body {
     }
 
     .add_character {
+      background-color: rgba(31, 28, 28, 0.815);
+      border: 5px double rgba(88, 3, 3, 0.856);
+      box-shadow: 0 0 10px 0px;
+      border-radius: 15px;
+      width: 600px;
+      padding: 30px;
+      margin: auto;
+      display: none;
+
+      @media screen and (max-width: 700px) {
+        width: 80%;
+      }
+    }
+
+    .update_character {
       background-color: rgba(31, 28, 28, 0.815);
       border: 5px double rgba(88, 3, 3, 0.856);
       box-shadow: 0 0 10px 0px;
@@ -186,10 +209,12 @@ body {
         width: 80%;
         text-align: center;
         margin: auto;
+        margin-bottom: 20px;
       }
 
       button {
         margin-right: 30px;
+        margin-bottom: 20px;
         padding: 8px;
         border-radius: 15px;
       }
@@ -198,11 +223,15 @@ body {
     .return {
       visibility: hidden;
       width: 100px;
+      margin-bottom: 30px;
+    }
+
+    .add_character_button {
+      margin-top: 30px;
     }
 
     button {
-      margin-top: 50px;
-      margin-bottom: 50px;
+      width: 200px;
       padding: 8px;
       background-color: rgba(88, 3, 3, 0.616);
       border: 3px double rgba(88, 3, 3, 0.616);
