@@ -111,7 +111,19 @@ let displayCharacter = () => {
                   console.log(getID);
                 });
 
-                formUpdate.addEventListener("click", () => {});
+                formUpdate.addEventListener("click", () => {
+                  axios.put(
+                    `https://character-database.becode.xyz/characters/${getID}`,
+                    {
+                      name: inputName.value,
+                      shortDescription: inputSD.value,
+                      description: inputDescr.value,
+                      image: response.data[0].image,
+                    }
+                  );
+
+                  alert("You have update the profile");
+                });
 
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
@@ -119,6 +131,8 @@ let displayCharacter = () => {
                   axios.delete(
                     `https://character-database.becode.xyz/characters/${getID}`
                   );
+
+                  alert("You have delete the profile");
 
                   containerFullProfile.style.display = "none";
                 });
@@ -233,12 +247,27 @@ let displayCharactersSearch = () => {
                   console.log(getID);
                 });
 
+                formUpdate.addEventListener("click", () => {
+                  axios.put(
+                    `https://character-database.becode.xyz/characters/${getID}`,
+                    {
+                      name: inputName.value,
+                      shortDescription: inputSD.value,
+                      description: inputDescr.value,
+                      image: response.data[0].image,
+                    }
+                  );
+                  alert("You have update the profile");
+                });
+
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
 
                   axios.delete(
                     `https://character-database.becode.xyz/characters/${getID}`
                   );
+
+                  alert("You have delete the profile");
 
                   containerFullProfile.style.display = "none";
                 });
