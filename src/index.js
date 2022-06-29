@@ -12,87 +12,165 @@ let inputSearch = document.querySelector("#input_search");
 
 const buttonSearch = document.querySelector(".search");
 
-//______________________________________________________________________
+//____________________________________________________________________________
 
-const displayCharacters = async () => {
-  try {
-    const response = await axios.get(
-      `https://character-database.becode.xyz/characters`
-    );
+let displayCharacter = () => {
+  axios
+    .get(`https://character-database.becode.xyz/characters`)
+    .then((response) =>
+      response.data.forEach((item) => {
+        const containerCharacter = document.createElement("div");
+        containerCharacter.setAttribute("class", "container_character");
+        container.appendChild(containerCharacter);
 
-    let displayCharacter = (e) => {
-      const containerCharacter = document.createElement("div");
-      containerCharacter.setAttribute("class", "container_character");
-      container.appendChild(containerCharacter);
+        const image = document.createElement("img");
+        image.src = "data:image/png;base64, " + item.image;
+        containerCharacter.appendChild(image);
 
-      const image = document.createElement("img");
-      image.src = "data:image/png;base64, " + response.data[e].image;
-      containerCharacter.appendChild(image);
+        const name = document.createElement("h2");
+        name.textContent = item.name;
+        containerCharacter.appendChild(name);
 
-      const name = document.createElement("h2");
-      name.textContent = response.data[e].name;
-      containerCharacter.appendChild(name);
+        const shortDescriprt = document.createElement("p");
+        shortDescriprt.textContent = item.shortDescription;
+        containerCharacter.appendChild(shortDescriprt);
 
-      const shortDescriprt = document.createElement("p");
-      shortDescriprt.textContent = response.data[e].shortDescription;
-      containerCharacter.appendChild(shortDescriprt);
+        const linkProfile = document.createElement("button");
+        linkProfile.setAttribute("id", "link_profile");
+        linkProfile.textContent = "profile";
+        containerCharacter.appendChild(linkProfile);
+      })
+    )
+    .then(function () {
+      const btnForSeeMore = document.querySelectorAll("#link_profile");
+      console.log(btnForSeeMore);
+      btnForSeeMore.forEach((el) => {
+        el.addEventListener("click", () => {
+          let fullprofileName = el.parentNode.children[1].textContent;
 
-      const linkProfile = document.createElement("button");
-      linkProfile.setAttribute("class", "link_profile");
-      linkProfile.textContent = "profile";
-      containerCharacter.appendChild(linkProfile);
-    };
+          container.remove(containerCharacter);
+          buttonAdd.style.display = "none";
 
-    displayCharacter(0);
-    displayCharacter(1);
-    displayCharacter(2);
-    displayCharacter(3);
-    displayCharacter(4);
-    displayCharacter(5);
-    displayCharacter(6);
-    displayCharacter(7);
-    displayCharacter(8);
-    displayCharacter(9);
-  } catch (err) {
-    console.error(err);
-  }
+          buttonReturn.style.visibility = "visible";
+
+          //___________________________________
+
+          let displayfullprofile = () => {
+            axios
+              .get(
+                `https://character-database.becode.xyz/characters?name=${fullprofileName}`
+              )
+              .then((response) => {
+                const containerFullProfile =
+                  document.querySelector(".full_profile");
+
+                containerFullProfile.style.display = "block";
+
+                const image = document.createElement("img");
+                image.src = "data:image/png;base64, " + response.data[0].image;
+                containerFullProfile.appendChild(image);
+
+                const name = document.createElement("h2");
+                name.textContent = response.data[0].name;
+                containerFullProfile.appendChild(name);
+
+                const descriprt = document.createElement("p");
+                descriprt.textContent = response.data[0].description;
+                containerFullProfile.appendChild(descriprt);
+
+                const buttonUpdate = document.createElement("button");
+                buttonUpdate.setAttribute("id", "update");
+                buttonUpdate.textContent = "update";
+                containerFullProfile.appendChild(buttonUpdate);
+
+                const buttonDelete = document.createElement("button");
+                buttonDelete.setAttribute("id", "delete");
+                buttonDelete.textContent = "delete";
+                containerFullProfile.appendChild(buttonDelete);
+              });
+          };
+
+          displayfullprofile();
+        });
+      });
+    });
 };
 
-//_____________________________________________________________________________
-
-displayCharacters();
+displayCharacter();
 
 //_____________________________________________________________________________
 
-const displayCharactersSearch = async () => {
-  try {
-    const response = await axios.get(
+let displayCharactersSearch = () => {
+  axios
+    .get(
       `https://character-database.becode.xyz/characters?name=${inputSearch.value}`
-    );
+    )
+    .then((response) => {
+      const containerCharacterSearch = document.createElement("div");
+      containerCharacterSearch.setAttribute("class", "container_Search");
+      main.appendChild(containerCharacterSearch);
 
-    const containerCharacterSearch = document.createElement("div");
-    containerCharacterSearch.setAttribute("class", "container_Search");
-    main.appendChild(containerCharacterSearch);
+      const image = document.createElement("img");
+      image.src = "data:image/png;base64, " + response.data[0].image;
+      containerCharacterSearch.appendChild(image);
 
-    const image = document.createElement("img");
-    image.src = "data:image/png;base64, " + response.data[0].image;
-    containerCharacterSearch.appendChild(image);
+      const name = document.createElement("h2");
+      name.textContent = response.data[0].name;
+      containerCharacterSearch.appendChild(name);
 
-    const name = document.createElement("h2");
-    name.textContent = response.data[0].name;
-    containerCharacterSearch.appendChild(name);
+      const shortDescriprt = document.createElement("p");
+      shortDescriprt.textContent = response.data[0].shortDescription;
+      containerCharacterSearch.appendChild(shortDescriprt);
 
-    const shortDescriprt = document.createElement("p");
-    shortDescriprt.textContent = response.data[0].shortDescription;
-    containerCharacterSearch.appendChild(shortDescriprt);
+      const linkProfile = document.createElement("button");
+      linkProfile.textContent = "profile";
+      linkProfile.setAttribute("id", "link_profile");
+      containerCharacterSearch.appendChild(linkProfile);
+    })
+    .then(function () {
+      const btnForSeeMore = document.querySelectorAll("#link_profile");
+      console.log(btnForSeeMore);
+      btnForSeeMore.forEach((el) => {
+        el.addEventListener("click", () => {
+          let fullprofileName = el.parentNode.children[1].textContent;
 
-    const linkProfile = document.createElement("button");
-    linkProfile.textContent = "profile";
-    linkProfile.setAttribute("class", "link_profile");
-    containerCharacterSearch.appendChild(linkProfile);
-  } catch (err) {
-    console.error(err);
-  }
+          let divSearch = document.querySelector(".container_Search");
+
+          divSearch.style.display = "none";
+
+          buttonReturn.style.visibility = "visible";
+
+          //___________________________________
+
+          let displayfullprofile = () => {
+            axios
+              .get(
+                `https://character-database.becode.xyz/characters?name=${fullprofileName}`
+              )
+              .then((response) => {
+                const containerFullProfile =
+                  document.querySelector(".full_profile");
+
+                containerFullProfile.style.display = "block";
+
+                const image = document.createElement("img");
+                image.src = "data:image/png;base64, " + response.data[0].image;
+                containerFullProfile.appendChild(image);
+
+                const name = document.createElement("h2");
+                name.textContent = response.data[0].name;
+                containerFullProfile.appendChild(name);
+
+                const descriprt = document.createElement("p");
+                descriprt.textContent = response.data[0].description;
+                containerFullProfile.appendChild(descriprt);
+              });
+          };
+
+          displayfullprofile();
+        });
+      });
+    });
 };
 
 //____________________________________________________________________________
@@ -153,6 +231,7 @@ buttonSearch.addEventListener("click", () => {
   form.style.display = "none";
   displayCharactersSearch();
   buttonAdd.style.display = "none";
+  buttonReturn.style.visibility = "visible";
 });
 
 document.addEventListener("keypress", (e) => {
@@ -161,6 +240,7 @@ document.addEventListener("keypress", (e) => {
     form.style.display = "none";
     displayCharactersSearch();
     buttonAdd.style.display = "none";
+    buttonReturn.style.visibility = "visible";
   }
 });
 
@@ -170,14 +250,17 @@ buttonReturn.addEventListener("click", () => {
 
 buttonAdd.addEventListener("click", () => {
   container.remove(containerCharacter);
+
   form.style.display = "block";
   buttonAdd.style.display = "none";
+  buttonReturn.style.visibility = "visible";
 });
 
 buttonSubmit.addEventListener("click", () => {
   addCharacterForm();
+  inputName.value = "";
+  inputSD.value = "";
+  inputDescr.value = "";
 });
 
 //______________________________________________________________________________
-
-const ButtonProfiles = document.querySelectorAll(".link_profile");

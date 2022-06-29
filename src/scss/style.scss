@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Actor&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Actor", sans-serif;
+}
+
 body {
   background-image: linear-gradient(
     to right top,
@@ -19,6 +27,7 @@ body {
       width: 80%;
       margin: auto;
       margin-bottom: 50px;
+      padding-bottom: 20px;
 
       @media screen and (max-width: 700px) {
         text-align: center;
@@ -69,10 +78,15 @@ body {
       padding-top: 40px;
       padding-bottom: 120px;
       border: 5px double rgba(88, 3, 3, 0.856);
+      box-shadow: 0 0 10px 0px;
       border-radius: 15px;
       margin: auto;
       img {
         border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      h2 {
+        margin-bottom: 20px;
       }
 
       button {
@@ -108,9 +122,15 @@ body {
         padding-top: 40px;
         padding-bottom: 120px;
         border: 5px double rgba(88, 3, 3, 0.856);
+        box-shadow: 0 0 10px 0px;
         border-radius: 15px;
         img {
           border-radius: 50%;
+          margin-bottom: 20px;
+        }
+
+        h2 {
+          margin-bottom: 20px;
         }
 
         button {
@@ -131,6 +151,7 @@ body {
     .add_character {
       background-color: rgba(31, 28, 28, 0.815);
       border: 5px double rgba(88, 3, 3, 0.856);
+      box-shadow: 0 0 10px 0px;
       border-radius: 15px;
       width: 600px;
       padding: 30px;
@@ -141,10 +162,48 @@ body {
         width: 80%;
       }
     }
+
+    .full_profile {
+      display: none;
+      width: 80%;
+      border: 5px double rgba(88, 3, 3, 0.616);
+      box-shadow: 0 0 10px 0px;
+      background-color: rgba(31, 28, 28, 0.815);
+      border-radius: 15px;
+      margin: auto;
+      padding: 30px;
+
+      img {
+        border-radius: 50%;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        margin-bottom: 30px;
+      }
+
+      p {
+        width: 80%;
+        text-align: center;
+        margin: auto;
+      }
+
+      button {
+        margin-right: 30px;
+        padding: 8px;
+        border-radius: 15px;
+      }
+    }
+
+    .return {
+      visibility: hidden;
+      width: 100px;
+    }
+
     button {
       margin-top: 50px;
       margin-bottom: 50px;
-      padding: 5px;
+      padding: 8px;
       background-color: rgba(88, 3, 3, 0.616);
       border: 3px double rgba(88, 3, 3, 0.616);
       cursor: pointer;
