@@ -375,6 +375,7 @@ buttonAdd.addEventListener("click", () => {
 
 buttonSubmit.addEventListener("click", () => {
   addCharacterForm();
+  alert("You have create a new profile!");
   inputName.value = "";
   inputSD.value = "";
   inputDescr.value = "";
