@@ -87,6 +87,18 @@ let displayCharacter = () => {
                 buttonDelete.setAttribute("id", "delete");
                 buttonDelete.textContent = "delete";
                 containerFullProfile.appendChild(buttonDelete);
+
+                const getID = response.data[0].id;
+
+                buttonDelete.addEventListener("click", () => {
+                  console.log(getID);
+
+                  axios.delete(
+                    `https://character-database.becode.xyz/characters/${getID}`
+                  );
+
+                  containerFullProfile.style.display = "none";
+                });
               });
           };
 
@@ -164,6 +176,28 @@ let displayCharactersSearch = () => {
                 const descriprt = document.createElement("p");
                 descriprt.textContent = response.data[0].description;
                 containerFullProfile.appendChild(descriprt);
+
+                const buttonUpdate = document.createElement("button");
+                buttonUpdate.setAttribute("id", "update");
+                buttonUpdate.textContent = "update";
+                containerFullProfile.appendChild(buttonUpdate);
+
+                const buttonDelete = document.createElement("button");
+                buttonDelete.setAttribute("id", "delete");
+                buttonDelete.textContent = "delete";
+                containerFullProfile.appendChild(buttonDelete);
+
+                const getID = response.data[0].id;
+
+                buttonDelete.addEventListener("click", () => {
+                  console.log(getID);
+
+                  axios.delete(
+                    `https://character-database.becode.xyz/characters/${getID}`
+                  );
+
+                  containerFullProfile.style.display = "none";
+                });
               });
           };
 
