@@ -111,7 +111,10 @@ let displayCharacter = () => {
                   console.log(getID);
                 });
 
-                formUpdate.addEventListener("click", () => {
+                const buttonSubmitUpdate =
+                  document.querySelector(".submit_Update");
+
+                buttonSubmitUpdate.addEventListener("click", () => {
                   axios.put(
                     `https://character-database.becode.xyz/characters/${getID}`,
                     {
@@ -122,7 +125,7 @@ let displayCharacter = () => {
                     }
                   );
 
-                  alert("You have update the profile");
+                  alert("You've update the profile!");
                 });
 
                 buttonDelete.addEventListener("click", () => {
@@ -247,7 +250,10 @@ let displayCharactersSearch = () => {
                   console.log(getID);
                 });
 
-                formUpdate.addEventListener("click", () => {
+                const buttonSubmitUpdate =
+                  document.querySelector(".submit_Update");
+
+                buttonSubmitUpdate.addEventListener("click", () => {
                   axios.put(
                     `https://character-database.becode.xyz/characters/${getID}`,
                     {
