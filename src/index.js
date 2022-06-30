@@ -163,13 +163,13 @@ let displayCharacter = () => {
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
 
-                  axios.delete(
-                    `https://character-database.becode.xyz/characters/${getID}`
-                  );
-
-                  alert("You have delete the profile");
-
-                  containerFullProfile.style.display = "none";
+                  let text = "Do you really want to delete it?";
+                  if (confirm(text) == true) {
+                    axios.delete(
+                      `https://character-database.becode.xyz/characters/${getID}`
+                    );
+                    containerFullProfile.style.display = "none";
+                  }
                 });
               });
           };
@@ -334,13 +334,13 @@ let displayCharactersSearch = () => {
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
 
-                  axios.delete(
-                    `https://character-database.becode.xyz/characters/${getID}`
-                  );
-
-                  alert("You have delete the profile");
-
-                  containerFullProfile.style.display = "none";
+                  let text = "Do you really want to delete it?";
+                  if (confirm(text) == true) {
+                    axios.delete(
+                      `https://character-database.becode.xyz/characters/${getID}`
+                    );
+                    containerFullProfile.style.display = "none";
+                  }
                 });
               });
           };
