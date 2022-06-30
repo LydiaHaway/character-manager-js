@@ -4,14 +4,7 @@
   font-family: "Actor", sans-serif;
 
   body {
-    background-image: linear-gradient(
-      to right top,
-      #4a2424,
-      #732729,
-      #9e252d,
-      #c91e2f,
-      #f6052f
-    );
+    background-image: $bgGradient;
     background-attachment: fixed;
 
     header {
@@ -20,7 +13,7 @@
         flex-flow: row wrap;
         justify-content: space-around;
         align-items: center;
-        border-bottom: 3px solid rgba(88, 3, 3, 0.329);
+        border-bottom: 3px solid $bordeBottomRed;
         width: 80%;
         margin: auto;
         margin-bottom: 50px;
@@ -34,18 +27,18 @@
         button {
           margin-top: 50px;
           padding: 5px;
-          background-color: rgba(88, 3, 3, 0.616);
-          border: 3px double rgba(88, 3, 3, 0.616);
+          background-color: $bgButton;
+          border: 3px double $borderButton;
           cursor: pointer;
 
           &:hover {
-            background-color: rgba(112, 39, 39, 0.616);
+            background-color: $buttonHover;
           }
         }
 
         h1 {
           font-size: 60px;
-          color: white;
+          color: $white;
         }
 
         input {
@@ -67,14 +60,14 @@
 
       .container_Search {
         text-align: center;
-        background-color: rgba(31, 28, 28, 0.815);
+        background-color: $bgContainer;
         width: 200px;
         height: 200px;
         padding-right: 25px;
         padding-left: 25px;
         padding-top: 40px;
         padding-bottom: 120px;
-        border: 5px double rgba(88, 3, 3, 0.856);
+        border: 5px double $borderContainer;
         box-shadow: 0 0 10px 0px;
         border-radius: 15px;
         margin: auto;
@@ -93,13 +86,13 @@
         button {
           color: $white;
           padding: 8px;
-          background-color: rgba(63, 18, 18, 0.616);
-          border: 3px double rgba(88, 3, 3, 0.616);
+          background-color: $BgButtonContainer;
+          border: 3px double $borderButtonContainer;
           border-radius: 15px;
           cursor: pointer;
 
           &:hover {
-            background-color: rgba(112, 39, 39, 0.616);
+            background-color: $buttonHover;
           }
         }
       }
@@ -115,14 +108,14 @@
 
         .container_character {
           text-align: center;
-          background-color: rgba(31, 28, 28, 0.815);
+          background-color: $bgContainer;
           width: 200px;
           height: 250px;
           padding-right: 25px;
           padding-left: 25px;
           padding-top: 40px;
           padding-bottom: 120px;
-          border: 5px double rgba(88, 3, 3, 0.856);
+          border: 5px double $borderContainer;
           box-shadow: 0 0 10px 0px;
           border-radius: 15px;
           img {
@@ -141,21 +134,21 @@
           button {
             color: $white;
             padding: 8px;
-            background-color: rgba(63, 18, 18, 0.616);
-            border: 3px double rgba(88, 3, 3, 0.616);
+            background-color: $BgButtonContainer;
+            border: 3px double $borderButtonContainer;
             border-radius: 15px;
             cursor: pointer;
 
             &:hover {
-              background-color: rgba(112, 39, 39, 0.616);
+              background-color: $buttonHover;
             }
           }
         }
       }
 
       .add_character {
-        background-color: rgba(31, 28, 28, 0.815);
-        border: 5px double rgba(88, 3, 3, 0.856);
+        background-color: $bgContainer;
+        border: 5px double $borderContainer;
         box-shadow: 0 0 10px 0px;
         border-radius: 15px;
         width: 600px;
@@ -169,8 +162,8 @@
       }
 
       .update_character {
-        background-color: rgba(31, 28, 28, 0.815);
-        border: 5px double rgba(88, 3, 3, 0.856);
+        background-color: $bgContainer;
+        border: 5px double $borderContainer;
         box-shadow: 0 0 10px 0px;
         border-radius: 15px;
         width: 600px;
@@ -186,9 +179,9 @@
       .full_profile {
         display: none;
         width: 800px;
-        border: 5px double rgba(88, 3, 3, 0.616);
+        border: 5px double $borderContainer;
         box-shadow: 0 0 10px 0px;
-        background-color: rgba(31, 28, 28, 0.815);
+        background-color: $bgContainer;
         border-radius: 15px;
         margin: auto;
         padding: 30px;
@@ -230,13 +223,13 @@
       button {
         width: 200px;
         padding: 8px;
-        background-color: rgba(88, 3, 3, 0.616);
-        border: 3px double rgba(88, 3, 3, 0.616);
+        background-color: $bgButton;
+        border: 3px double $bgButton;
         cursor: pointer;
         color: $white;
 
         &:hover {
-          background-color: rgba(112, 39, 39, 0.616);
+          background-color: $buttonHover;
         }
       }
     }
