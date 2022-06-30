@@ -129,10 +129,10 @@ let displayCharacter = () => {
                 let base64String = "";
                 base64String = response.data[0].image;
                 function Uploaded() {
-                  var file = document.querySelector("#file-selector_update")[
+                  let file = document.querySelector("#file-selector_update")[
                     "files"
                   ][0];
-                  var reader = new FileReader();
+                  let reader = new FileReader();
                   reader.onload = function () {
                     base64String = reader.result
                       .replace("data:", "")
@@ -300,10 +300,10 @@ let displayCharactersSearch = () => {
                 let base64String = "";
                 base64String = response.data[0].image;
                 function Uploaded() {
-                  var file = document.querySelector("#file-selector_update")[
+                  let file = document.querySelector("#file-selector_update")[
                     "files"
                   ][0];
-                  var reader = new FileReader();
+                  let reader = new FileReader();
                   reader.onload = function () {
                     base64String = reader.result
                       .replace("data:", "")
@@ -373,10 +373,10 @@ const inputDescr = document.querySelector("#description");
 
 const file = document.querySelector("input[type=file]");
 
-var base64String = "";
+let base64String = "";
 function Uploaded() {
-  var file = document.querySelector("input[type=file]")["files"][0];
-  var reader = new FileReader();
+  let file = document.querySelector("input[type=file]")["files"][0];
+  let reader = new FileReader();
   reader.onload = function () {
     base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
     imageBase64Stringsep = base64String;
