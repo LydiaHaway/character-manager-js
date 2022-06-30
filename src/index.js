@@ -66,13 +66,17 @@ let displayCharacter = () => {
 
                 containerFullProfile.style.display = "block";
 
+                const divImgTitle = document.createElement("div");
+                divImgTitle.setAttribute("class", "Container_img_title");
+                containerFullProfile.appendChild(divImgTitle);
+
                 const image = document.createElement("img");
                 image.src = "data:image/png;base64, " + response.data[0].image;
-                containerFullProfile.appendChild(image);
+                divImgTitle.appendChild(image);
 
                 const name = document.createElement("h2");
                 name.textContent = response.data[0].name;
-                containerFullProfile.appendChild(name);
+                divImgTitle.appendChild(name);
 
                 const descriprt = document.createElement("p");
                 descriprt.textContent = response.data[0].description;
@@ -180,7 +184,7 @@ let displayCharactersSearch = () => {
       `https://character-database.becode.xyz/characters?name=${inputSearch.value}`
     )
     .then((response) => {
-      const containerCharacterSearch = document.createElement("div");
+      const containerCharacterSearch = document.createElement("section");
       containerCharacterSearch.setAttribute("class", "container_Search");
       main.appendChild(containerCharacterSearch);
 
@@ -227,13 +231,17 @@ let displayCharactersSearch = () => {
 
                 containerFullProfile.style.display = "block";
 
+                const divImgTitle = document.createElement("div");
+                divImgTitle.setAttribute("class", "Container_img_title");
+                containerFullProfile.appendChild(divImgTitle);
+
                 const image = document.createElement("img");
                 image.src = "data:image/png;base64, " + response.data[0].image;
-                containerFullProfile.appendChild(image);
+                divImgTitle.appendChild(image);
 
                 const name = document.createElement("h2");
                 name.textContent = response.data[0].name;
-                containerFullProfile.appendChild(name);
+                divImgTitle.appendChild(name);
 
                 const descriprt = document.createElement("p");
                 descriprt.textContent = response.data[0].description;
@@ -424,5 +432,3 @@ buttonSubmit.addEventListener("click", () => {
   inputSD.value = "";
   inputDescr.value = "";
 });
-
-//______________________________________________________________________________
