@@ -29,6 +29,7 @@ let displayCharacter = () => {
 
         const image = document.createElement("img");
         image.src = "data:image/png;base64, " + item.image;
+        image.alt = "illustration";
         divImg.appendChild(image);
 
         const name = document.createElement("h2");
@@ -40,13 +41,13 @@ let displayCharacter = () => {
         containerCharacter.appendChild(shortDescriprt);
 
         const linkProfile = document.createElement("button");
-        linkProfile.setAttribute("id", "link_profile");
+        linkProfile.setAttribute("class", "link_profile");
         linkProfile.textContent = "profile";
         containerCharacter.appendChild(linkProfile);
       })
     )
     .then(function () {
-      const btnForSeeMore = document.querySelectorAll("#link_profile");
+      const btnForSeeMore = document.querySelectorAll(".link_profile");
       console.log(btnForSeeMore);
       btnForSeeMore.forEach((el) => {
         el.addEventListener("click", () => {
@@ -76,6 +77,7 @@ let displayCharacter = () => {
 
                 const image = document.createElement("img");
                 image.src = "data:image/png;base64, " + response.data[0].image;
+                image.alt = "illustration";
                 divImgTitle.appendChild(image);
 
                 const name = document.createElement("h2");
@@ -198,6 +200,7 @@ let displayCharactersSearch = () => {
 
       const image = document.createElement("img");
       image.src = "data:image/png;base64, " + response.data[0].image;
+      image.alt = "illustration";
       divImg.appendChild(image);
 
       const name = document.createElement("h2");
@@ -210,11 +213,11 @@ let displayCharactersSearch = () => {
 
       const linkProfile = document.createElement("button");
       linkProfile.textContent = "profile";
-      linkProfile.setAttribute("id", "link_profile");
+      linkProfile.setAttribute("class", "link_profile");
       containerCharacterSearch.appendChild(linkProfile);
     })
     .then(function () {
-      const btnForSeeMore = document.querySelectorAll("#link_profile");
+      const btnForSeeMore = document.querySelectorAll(".link_profile");
       console.log(btnForSeeMore);
       btnForSeeMore.forEach((el) => {
         el.addEventListener("click", () => {
@@ -245,6 +248,7 @@ let displayCharactersSearch = () => {
 
                 const image = document.createElement("img");
                 image.src = "data:image/png;base64, " + response.data[0].image;
+                image.alt = "illustration";
                 divImgTitle.appendChild(image);
 
                 const name = document.createElement("h2");

@@ -12,6 +12,10 @@ We had to create an app " Character-manager ", using JS with the help of an API,
 - delete a profile from the API
 - Update a profile from the API
 
+## Main page
+
+![mainPage](./src/img/caption_mainPage.png)
+
 ## Technologies
 
 HTML, SCSS, JS
