@@ -163,7 +163,7 @@ let displayCharacter = () => {
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
 
-                  let text = "Do you really want to delete it?";
+                  let text = "Do you really want to delete this character?";
                   if (confirm(text) == true) {
                     axios.delete(
                       `https://character-database.becode.xyz/characters/${getID}`
@@ -334,7 +334,7 @@ let displayCharactersSearch = () => {
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
 
-                  let text = "Do you really want to delete it?";
+                  let text = "Do you really want to delete this character?";
                   if (confirm(text) == true) {
                     axios.delete(
                       `https://character-database.becode.xyz/characters/${getID}`
@@ -439,8 +439,11 @@ buttonAdd.addEventListener("click", () => {
 });
 
 buttonSubmit.addEventListener("click", () => {
-  addCharacterForm();
-  inputName.value = "";
-  inputSD.value = "";
-  inputDescr.value = "";
+  let text = "Are you sure it's complete?";
+  if (confirm(text) == true) {
+    addCharacterForm();
+    inputName.value = "";
+    inputSD.value = "";
+    inputDescr.value = "";
+  }
 });
