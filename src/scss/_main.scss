@@ -29,6 +29,7 @@
           padding: 5px;
           background-color: $bgButton;
           border: 3px double $borderButton;
+          font-weight: bold;
           cursor: pointer;
 
           &:hover {
@@ -72,37 +73,42 @@
         .container_character {
           text-align: center;
           background-color: $bgContainer;
-          width: 200px;
-          height: 250px;
-          padding-right: 25px;
-          padding-left: 25px;
-          padding-top: 40px;
-          padding-bottom: 120px;
+          width: 250px;
+          height: 380px;
           border: 5px double $borderContainer;
           box-shadow: 0 0 10px 0px;
           border-radius: 15px;
+          position: relative;
 
-          img {
-            border: 5px double $borderContainer;
-            box-shadow: 0 0 10px 0px;
-            border-radius: 50%;
-            margin-bottom: 20px;
+          .divImg {
+            margin-top: 20px;
+            img {
+              border: 5px double $borderContainer;
+              box-shadow: 0 0 10px 0px;
+              border-radius: 50%;
+            }
           }
 
           h2 {
-            margin-bottom: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
           }
 
           p {
-            margin-bottom: 50px;
+            color: $textColor;
           }
 
           button {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
             color: $white;
             padding: 8px;
             background-color: $BgButtonContainer;
             border: 3px double $borderButtonContainer;
-            border-radius: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
             cursor: pointer;
 
             &:hover {
@@ -115,37 +121,44 @@
       .container_Search {
         text-align: center;
         background-color: $bgContainer;
-        width: 200px;
-        height: 200px;
-        padding-right: 25px;
-        padding-left: 25px;
-        padding-top: 40px;
-        padding-bottom: 120px;
-        margin: auto;
-        margin-bottom: 50px;
+        width: 250px;
+        height: 380px;
         border: 5px double $borderContainer;
         box-shadow: 0 0 10px 0px;
         border-radius: 15px;
-        img {
-          border: 5px double $borderContainer;
-          box-shadow: 0 0 10px 0px;
-          border-radius: 50%;
-          margin-bottom: 20px;
+        position: relative;
+        margin: auto;
+        margin-bottom: 30px;
+
+        .divImg {
+          margin-top: 20px;
+          img {
+            border: 5px double $borderContainer;
+            box-shadow: 0 0 10px 0px;
+            border-radius: 50%;
+          }
         }
+
         h2 {
-          margin-bottom: 20px;
+          margin-top: 30px;
+          margin-bottom: 30px;
         }
 
         p {
-          margin-bottom: 20px;
+          color: $textColor;
         }
 
         button {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
           color: $white;
           padding: 8px;
           background-color: $BgButtonContainer;
           border: 3px double $borderButtonContainer;
-          border-radius: 15px;
+          font-weight: bold;
+          text-transform: uppercase;
           cursor: pointer;
 
           &:hover {
@@ -246,6 +259,7 @@
           text-align: center;
           margin: auto;
           margin-bottom: 50px;
+          color: $textColor;
         }
 
         button {
@@ -254,6 +268,8 @@
           margin: auto;
           margin-bottom: 20px;
           display: block;
+          font-weight: bold;
+          text-transform: uppercase;
         }
       }
 
@@ -270,6 +286,8 @@
         border: 3px double $bgButton;
         cursor: pointer;
         color: $white;
+        font-weight: bold;
+        text-transform: uppercase;
 
         &:hover {
           background-color: $buttonHover;

@@ -23,9 +23,13 @@ let displayCharacter = () => {
         containerCharacter.setAttribute("class", "container_character");
         container.appendChild(containerCharacter);
 
+        const divImg = document.createElement("div");
+        divImg.setAttribute("class", "divImg");
+        containerCharacter.appendChild(divImg);
+
         const image = document.createElement("img");
         image.src = "data:image/png;base64, " + item.image;
-        containerCharacter.appendChild(image);
+        divImg.appendChild(image);
 
         const name = document.createElement("h2");
         name.textContent = item.name;
@@ -188,9 +192,13 @@ let displayCharactersSearch = () => {
       containerCharacterSearch.setAttribute("class", "container_Search");
       main.appendChild(containerCharacterSearch);
 
+      const divImg = document.createElement("div");
+      divImg.setAttribute("class", "divImg");
+      containerCharacterSearch.appendChild(divImg);
+
       const image = document.createElement("img");
       image.src = "data:image/png;base64, " + response.data[0].image;
-      containerCharacterSearch.appendChild(image);
+      divImg.appendChild(image);
 
       const name = document.createElement("h2");
       name.textContent = response.data[0].name;
