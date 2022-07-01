@@ -24,6 +24,10 @@ We had to create an app " Character-manager ", using JS with the help of an API,
 
 ![form](./src/img/create.png)
 
+## LightHouse test
+
+![lighthouse](./src/img/lighthouse.png)
+
 ## Technologies
 
 HTML, SCSS, JS

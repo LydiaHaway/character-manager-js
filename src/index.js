@@ -84,6 +84,11 @@ let displayCharacter = () => {
                 name.textContent = response.data[0].name;
                 divImgTitle.appendChild(name);
 
+                const shortDescriprt = document.createElement("p");
+                shortDescriprt.setAttribute("class", "short_description");
+                shortDescriprt.textContent = response.data[0].shortDescription;
+                containerFullProfile.appendChild(shortDescriprt);
+
                 const descriprt = document.createElement("p");
                 descriprt.textContent = response.data[0].description;
                 containerFullProfile.appendChild(descriprt);
