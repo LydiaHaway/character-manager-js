@@ -16,6 +16,14 @@ We had to create an app " Character-manager ", using JS with the help of an API,
 
 ![mainPage](./src/img/caption_mainPage.png)
 
+## Full profile
+
+![full profile](./src/img/full_profile.png)
+
+## Creation
+
+![form](./src/img/create.png)
+
 ## Technologies
 
 HTML, SCSS, JS
