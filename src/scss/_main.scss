@@ -245,7 +245,6 @@
         background-color: $bgContainer;
         border-radius: 15px;
         margin: auto;
-        padding: 30px;
         text-align: center;
 
         @media screen and (max-width: 900px) {
@@ -259,6 +258,9 @@
           gap: 50px;
           align-items: center;
           margin-bottom: 50px;
+          padding-top: 10px;
+          padding-bottom: 20px;
+          background-image: $bgGradient;
           img {
             border: 5px double $borderContainer;
             box-shadow: 0 0 10px 0px;
@@ -279,7 +281,7 @@
         }
 
         button {
-          padding: 8px;
+          padding: 5px;
           border-radius: 15px;
           margin: auto;
           margin-bottom: 20px;
@@ -296,8 +298,8 @@
       }
 
       button {
-        width: 200px;
         padding: 8px;
+        width: 150px;
         background-color: $bgButton;
         border: 3px double $bgButton;
         cursor: pointer;

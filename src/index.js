@@ -147,23 +147,24 @@ let displayCharacter = () => {
                 });
 
                 buttonSubmitUpdate.addEventListener("click", () => {
-                  axios.put(
-                    `https://character-database.becode.xyz/characters/${getID}`,
-                    {
-                      name: inputName.value,
-                      shortDescription: inputSD.value,
-                      description: inputDescr.value,
-                      image: base64String,
-                    }
-                  );
-
-                  alert("You've update the profile!");
+                  let text = "Are you sure ?";
+                  if (confirm(text) == true) {
+                    axios.put(
+                      `https://character-database.becode.xyz/characters/${getID}`,
+                      {
+                        name: inputName.value,
+                        shortDescription: inputSD.value,
+                        description: inputDescr.value,
+                        image: base64String,
+                      }
+                    );
+                  }
                 });
 
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
 
-                  let text = "Do you really want to delete this character?";
+                  let text = "Do you really want to delete this character ?";
                   if (confirm(text) == true) {
                     axios.delete(
                       `https://character-database.becode.xyz/characters/${getID}`
@@ -318,23 +319,24 @@ let displayCharactersSearch = () => {
                 });
 
                 buttonSubmitUpdate.addEventListener("click", () => {
-                  axios.put(
-                    `https://character-database.becode.xyz/characters/${getID}`,
-                    {
-                      name: inputName.value,
-                      shortDescription: inputSD.value,
-                      description: inputDescr.value,
-                      image: base64String,
-                    }
-                  );
-
-                  alert("You've update the profile!");
+                  let text = "Are you sure ?";
+                  if (confirm(text) == true) {
+                    axios.put(
+                      `https://character-database.becode.xyz/characters/${getID}`,
+                      {
+                        name: inputName.value,
+                        shortDescription: inputSD.value,
+                        description: inputDescr.value,
+                        image: base64String,
+                      }
+                    );
+                  }
                 });
 
                 buttonDelete.addEventListener("click", () => {
                   console.log(getID);
 
-                  let text = "Do you really want to delete this character?";
+                  let text = "Do you really want to delete this character ?";
                   if (confirm(text) == true) {
                     axios.delete(
                       `https://character-database.becode.xyz/characters/${getID}`
@@ -439,7 +441,7 @@ buttonAdd.addEventListener("click", () => {
 });
 
 buttonSubmit.addEventListener("click", () => {
-  let text = "Are you sure it's complete?";
+  let text = "Are you sure it's complete ?";
   if (confirm(text) == true) {
     addCharacterForm();
     inputName.value = "";
