@@ -48,7 +48,6 @@ let displayCharacter = () => {
     )
     .then(function () {
       const btnForSeeMore = document.querySelectorAll(".link_profile");
-      console.log(btnForSeeMore);
       btnForSeeMore.forEach((el) => {
         el.addEventListener("click", () => {
           let fullprofileName = el.parentNode.children[1].textContent;
@@ -222,7 +221,6 @@ let displayCharactersSearch = () => {
     })
     .then(function () {
       const btnForSeeMore = document.querySelectorAll(".link_profile");
-      console.log(btnForSeeMore);
       btnForSeeMore.forEach((el) => {
         el.addEventListener("click", () => {
           let fullprofileName = el.parentNode.children[1].textContent;
