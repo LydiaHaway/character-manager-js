@@ -497,7 +497,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scs
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("module.exports = __webpack_require__.p + \"a2c8bba16adf6015f1ee.jpg\";\n\n//# sourceURL=webpack://character-manager/./src/img/bg.jpg?");
+eval("module.exports = __webpack_require__.p + \"f3b76f3c8efb2c7188c2.jpg\";\n\n//# sourceURL=webpack://character-manager/./src/img/bg.jpg?");
 
 /***/ })
 
