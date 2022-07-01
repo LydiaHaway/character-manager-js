@@ -167,8 +167,6 @@ let displayCharacter = () => {
                 });
 
                 buttonDelete.addEventListener("click", () => {
-                  console.log(getID);
-
                   let text = "Do you really want to delete this character ?";
                   if (confirm(text) == true) {
                     axios.delete(
@@ -295,7 +293,6 @@ let displayCharactersSearch = () => {
                 buttonUpdate.addEventListener("click", () => {
                   containerFullProfile.style.display = "none";
                   formUpdate.style.display = "block";
-                  console.log(getID);
                 });
 
                 const buttonSubmitUpdate =
@@ -339,8 +336,6 @@ let displayCharactersSearch = () => {
                 });
 
                 buttonDelete.addEventListener("click", () => {
-                  console.log(getID);
-
                   let text = "Do you really want to delete this character ?";
                   if (confirm(text) == true) {
                     axios.delete(
