@@ -203,6 +203,11 @@
         padding: 30px;
         margin: auto;
         display: none;
+        transition: 0.5s;
+
+        &:hover {
+          box-shadow: 0 0 20px 0px;
+        }
 
         input {
           &:focus {
@@ -231,6 +236,11 @@
         padding: 30px;
         margin: auto;
         display: none;
+        transition: 0.5s;
+
+        &:hover {
+          box-shadow: 0 0 20px 0px;
+        }
 
         input {
           &:focus {
@@ -259,6 +269,11 @@
         border-radius: 15px;
         margin: auto;
         text-align: center;
+        transition: 0.5s;
+
+        &:hover {
+          box-shadow: 0 0 20px 0px;
+        }
 
         @media screen and (max-width: 900px) {
           width: 80%;
