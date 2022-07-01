@@ -12,7 +12,7 @@ let inputSearch = document.querySelector("#input_search");
 
 const buttonSearch = document.querySelector(".search");
 
-//______________________________________________________________________________________________________________________________________________
+//____________________________________________________________________________________________________________________________________________________________________________
 
 let displayCharacter = () => {
   axios
@@ -46,6 +46,9 @@ let displayCharacter = () => {
         containerCharacter.appendChild(linkProfile);
       })
     )
+
+    //______________________________________________________________________________
+
     .then(function () {
       const btnForSeeMore = document.querySelectorAll(".link_profile");
       btnForSeeMore.forEach((el) => {
@@ -57,7 +60,7 @@ let displayCharacter = () => {
 
           buttonReturn.style.visibility = "visible";
 
-          //___________________________________
+          //_________________________________________________________________________
 
           let displayfullprofile = () => {
             axios
@@ -101,6 +104,8 @@ let displayCharacter = () => {
                 buttonDelete.setAttribute("id", "delete");
                 buttonDelete.textContent = "delete";
                 containerFullProfile.appendChild(buttonDelete);
+
+                //_____________________________________________________________
 
                 const getID = response.data[0].id;
                 const formUpdate = document.querySelector(".update_character");
@@ -185,7 +190,7 @@ let displayCharacter = () => {
 
 displayCharacter();
 
-//_____________________________________________________________________________________________________________________________________________________
+//____________________________________________________________________________________________________________________________________________________________________________
 
 let displayCharactersSearch = () => {
   axios
@@ -219,6 +224,9 @@ let displayCharactersSearch = () => {
       linkProfile.setAttribute("class", "link_profile");
       containerCharacterSearch.appendChild(linkProfile);
     })
+
+    //____________________________________________________________________________________
+
     .then(function () {
       const btnForSeeMore = document.querySelectorAll(".link_profile");
       btnForSeeMore.forEach((el) => {
@@ -270,6 +278,8 @@ let displayCharactersSearch = () => {
                 buttonDelete.setAttribute("id", "delete");
                 buttonDelete.textContent = "delete";
                 containerFullProfile.appendChild(buttonDelete);
+
+                //__________________________________________________________________________
 
                 const getID = response.data[0].id;
                 const formUpdate = document.querySelector(".update_character");
@@ -346,16 +356,12 @@ let displayCharactersSearch = () => {
           };
 
           displayfullprofile();
-
-          //_________________________________________________________________
         });
       });
     });
 };
 
-//____________________________________________________________________________
-
-//____________________________________________________________________________
+//______________________________________________________________________________________________________________________________________________________
 
 const containerCharacter = document.querySelector(".container_character");
 
@@ -369,7 +375,7 @@ const inputName = document.querySelector("#nameCharacter");
 const inputSD = document.querySelector("#shortDescription");
 const inputDescr = document.querySelector("#description");
 
-//__________________________________________________________________________
+//_____________________________________________________________________________
 
 const file = document.querySelector("input[type=file]");
 
@@ -388,7 +394,7 @@ file.addEventListener("change", () => {
   Uploaded();
 });
 
-//___________________________________________________________________________
+//_________________________________________________________________________________________________________________
 
 const addCharacterForm = async () => {
   try {
