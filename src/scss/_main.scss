@@ -102,7 +102,7 @@
             @include button_Container;
 
             &:hover {
-              background-color: $buttonHover;
+              @include hover;
             }
           }
         }
@@ -137,7 +137,7 @@
           @include button_Container;
 
           &:hover {
-            background-color: $buttonHover;
+            @include hover;
           }
         }
       }
@@ -288,7 +288,7 @@
         text-transform: uppercase;
 
         &:hover {
-          background-color: $buttonHover;
+          @include hover;
         }
       }
     }
