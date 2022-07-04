@@ -36,20 +36,6 @@ $borderContainer: rgba(88, 3, 3, 0.856);
   transition: 0.2s;
 }
 
-@mixin button_Container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: $white;
-  padding: 8px;
-  background-color: $BgButtonContainer;
-  border: 3px double $borderButtonContainer;
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
 @mixin div_img {
   background-image: $bgGradient;
   position: relative;
@@ -63,4 +49,28 @@ $borderContainer: rgba(88, 3, 3, 0.856);
   position: absolute;
   top: 20px;
   left: 70px;
+}
+
+@mixin title_container {
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+@mixin description_container {
+  color: $textColor;
+  padding: 5px;
+}
+
+@mixin button_Container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: $white;
+  padding: 8px;
+  background-color: $BgButtonContainer;
+  border: 3px double $borderButtonContainer;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
 }
